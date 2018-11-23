@@ -23,7 +23,9 @@ export default class App extends Component<Props> {
         super(props);
 
         this.state = {
-            token: ''
+            token: '',
+            message: '',
+            status: ''
         };
 
         this.fcmSenderId = '1060337103079';
@@ -46,6 +48,7 @@ export default class App extends Component<Props> {
             onNotification: (notification) => {
                 console.log('NOTIFICATION:', notification);
 
+                this.setState({message: JSON.stringify(notification), status: 'OnNotifcation'});
                 // process the notification
 
                 // required on iOS only (see fetchCompletionHandler docs: https://facebook.github.io/react-native/docs/pushnotificationios.html)
@@ -67,7 +70,7 @@ export default class App extends Component<Props> {
 
             // Should the initial notification be popped automatically
             // default: true
-            popInitialNotification: true,
+            popInitialNotification: false,
 
             /**
              * (optional) default: true
@@ -91,6 +94,8 @@ export default class App extends Component<Props> {
                 <TouchableOpacity onPress={() => PushNotification.checkPermissions(this.handlePerm)}>
                     <Text>Check Permissions</Text>
                 </TouchableOpacity>
+                <Text>{this.state.status}</Text>
+                <Text>{this.state.message}</Text>
             </View>
         );
     }
