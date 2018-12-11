@@ -3,13 +3,16 @@
 buildscript {
     ext {
         buildToolsVersion = "27.0.3"
-        minSdkVersion = 16
+        minSdkVersion = 19
         compileSdkVersion = 27
         targetSdkVersion = 26
         supportLibVersion = "27.1.1"
     }
     repositories {
         google()
+        google()
+        mavenLocal()
+        mavenCentral()
         jcenter()
     }
     dependencies {
@@ -22,9 +25,11 @@ buildscript {
 
 allprojects {
     repositories {
-        mavenLocal()
         google()
+        mavenCentral()
+        mavenLocal()
         jcenter()
+        maven { url 'https://jitpack.io' }
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
             url "$rootDir/../node_modules/react-native/android"
@@ -32,6 +37,20 @@ allprojects {
     }
 }
 
+subprojects { subproject ->
+        afterEvaluate {
+                if ((subproject.plugins.hasPlugin('android') || subproject.plugins.hasPlugin('android-library'))) {
+                        android {
+                                variantFilter { variant ->
+                                       def names = variant.flavors*.name
+                                       if (names.contains("reactNative51") || names.contains("reactNative55")) {
+                                                setIgnore(true)
+                                           }
+                                   }
+                           }
+                    }
+           }
+    }
 
 task wrapper(type: Wrapper) {
     gradleVersion = '4.4'

@@ -9,7 +9,7 @@
 import React, {Component} from 'react';
 import {Alert, Platform, PushNotificationIOS, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import PushNotification from 'react-native-push-notification';
-import config from './Config.json';
+import config from './config.json';
 
 const instructions = Platform.select({
     ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
