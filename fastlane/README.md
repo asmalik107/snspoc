@@ -31,6 +31,11 @@ Match Dev
 fastlane ios match_adhoc
 ```
 Match Test
+### ios pem_gen
+```
+fastlane ios pem_gen
+```
+Pem
 
 ----
 

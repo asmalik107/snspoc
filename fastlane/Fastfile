@@ -32,4 +32,10 @@ platform :ios do
     puts 'APP_ID:' + ENV['FASTLANE_APP_ID']
     match(type: 'adhoc', readonly: true)
   end
+
+  desc "Pem"
+  lane :pem_gen do
+    puts 'APP_ID:' + ENV['FASTLANE_APP_ID']
+    pem(development: true)
+  end
 end
