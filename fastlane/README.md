@@ -45,7 +45,7 @@ Pem
 ```
 fastlane ios icon_badge
 ```
-Pem
+Badge icons
 
 ----
 

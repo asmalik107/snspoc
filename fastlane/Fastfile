@@ -44,9 +44,16 @@ platform :ios do
     pem(development: true)
   end
 
-    desc "Pem"
-    lane :icon_badge do
+    desc "Badge icons"
+    lane :icon_badge do |options|
       puts 'APP_ID:' + ENV['FASTLANE_APP_ID']
-      pem(development: true)
+      puts options[:foo]
+      add_badge(
+        glob: '/ios/snspoc/Images.xcassets/AppIcon.test.appiconset/*.{png,PNG}',
+        alpha:true,
+        shield:'Env' + ENV['ENV'] + '-blue',
+        shield_gravity: 'south',
+        shield_no_resize: true
+        )
     end
 end
