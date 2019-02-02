@@ -15,6 +15,17 @@ Install _fastlane_ using
 or alternatively using `brew cask install fastlane`
 
 # Available Actions
+## Android
+### android icon_badge
+```
+fastlane android icon_badge
+```
+Description of what the lane does
+
+Badge icons
+
+----
+
 ## iOS
 ### ios custom_lane
 ```
