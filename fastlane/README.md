@@ -41,6 +41,11 @@ Match Test
 fastlane ios pem_gen
 ```
 Pem
+### ios icon_badge
+```
+fastlane ios icon_badge
+```
+Pem
 
 ----
 

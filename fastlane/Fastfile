@@ -43,4 +43,10 @@ platform :ios do
     puts 'APP_ID:' + ENV['FASTLANE_APP_ID']
     pem(development: true)
   end
+
+    desc "Pem"
+    lane :icon_badge do
+      puts 'APP_ID:' + ENV['FASTLANE_APP_ID']
+      pem(development: true)
+    end
 end
