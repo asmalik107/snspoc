@@ -50,8 +50,8 @@ platform :ios do
       puts options[:foo]
       add_badge(
         glob: '/ios/snspoc/Images.xcassets/AppIcon.test.appiconset/*.{png,PNG}',
-        alpha:true,
-        shield:'Env' + ENV['ENV'] + '-blue',
+        no_badge: true,
+        shield:'Env-' + ENV['ENV'] + '-blue',
         shield_gravity: 'south',
         shield_no_resize: true
         )
