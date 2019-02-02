@@ -137,6 +137,19 @@ android {
             signingConfig signingConfigs.release
         }
     }
+    flavorDimensions "environment"
+    productFlavors {
+        dev {
+            // Assigns this product flavor to the "version" flavor dimension.
+            // This property is optional if you are using only one dimension.
+            dimension "environment"
+        }
+        qa {
+            dimension "environment"
+            applicationIdSuffix ".test"
+            versionNameSuffix "-test"
+        }
+    }
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
@@ -166,6 +179,7 @@ configurations.all {
 }
 
 dependencies {
+    compile project(':react-native-charts-wrapper')
     implementation project(':react-native-push-notification')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'com.android.support:design:28.0.0'
