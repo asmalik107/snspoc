@@ -21,6 +21,11 @@ platform :ios do
     # add actions here: https://docs.fastlane.tools/actions
   end
 
+  desc "Check Env"
+  lane :env_check do
+    puts 'APP_ID:' + ENV['FASTLANE_APP_ID']
+  end
+
   desc "Match Dev"
   lane :match_development do
     puts 'APP_ID:' + ENV['FASTLANE_APP_ID']
