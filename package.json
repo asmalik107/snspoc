@@ -11,6 +11,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@segment/analytics-react-native": "^0.0.1-beta.3",
     "react": "16.6.1",
     "react-native": "0.57.7",
     "react-native-charts-wrapper": "^0.5.0",

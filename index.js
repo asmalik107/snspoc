@@ -4,6 +4,16 @@ import {Navigation} from "react-native-navigation";
 import App from './App';
 import Home from "./src/Home";
 import Settings from "./src/Settings";
+import analytics from '@segment/analytics-react-native';
+import config from './config.json';
+
+analytics.setup(config.SEGMENT_KEY, {
+    // Record screen views automatically!
+    recordScreenViews: true,
+    // Record certain application events automatically!
+    trackAppLifecycleEvents: true
+});
+
 
 Navigation.registerComponent(`am.playground.WelcomeScreen`, () => App);
 Navigation.registerComponent(`am.playground.Home`, () => Home);

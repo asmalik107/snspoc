@@ -179,6 +179,7 @@ configurations.all {
 }
 
 dependencies {
+    compile project(':@segment_analytics-react-native')
     compile project(':react-native-charts-wrapper')
     implementation project(':react-native-push-notification')
     implementation fileTree(dir: "libs", include: ["*.jar"])

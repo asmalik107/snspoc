@@ -10,6 +10,7 @@ import java.util.List;
 import com.reactnativenavigation.NavigationApplication;
 import com.reactnativenavigation.react.NavigationReactNativeHost;
 import com.reactnativenavigation.react.ReactGateway;
+import com.segment.analytics.reactnative.core.RNAnalyticsPackage;
 
 
 public class MainApplication extends NavigationApplication {
@@ -35,7 +36,8 @@ public class MainApplication extends NavigationApplication {
         // No need to add RnnPackage and MainReactPackage
         return Arrays.<ReactPackage>asList(
                 // eg. new VectorIconsPackage()
-                new ReactNativePushNotificationPackage()
+                new ReactNativePushNotificationPackage(),
+                new RNAnalyticsPackage()
         );
     }
 

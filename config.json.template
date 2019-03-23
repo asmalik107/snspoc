@@ -1,4 +1,5 @@
 {
-  "FCM_SERVER_ID": ""
+  "FCM_SERVER_ID": "",
+  "SEGMENT_KEY": ""
 }
 

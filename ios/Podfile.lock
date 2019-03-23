@@ -1,4 +1,5 @@
 PODS:
+  - Analytics (3.6.10)
   - boost-for-react-native (1.63.0)
   - Charts (3.1.1):
     - Charts/Core (= 3.1.1)
@@ -56,6 +57,9 @@ PODS:
     - React/Core
     - React/fishhook
     - React/RCTBlob
+  - RNAnalytics (0.0.1-beta.3):
+    - Analytics
+    - React
   - RNCharts (0.5.0):
     - Charts (= 3.1.1)
     - React
@@ -80,11 +84,13 @@ DEPENDENCIES:
   - React/RCTText (from `../node_modules/react-native/`)
   - React/RCTVibration (from `../node_modules/react-native/`)
   - React/RCTWebSocket (from `../node_modules/react-native/`)
+  - "RNAnalytics (from `../node_modules/@segment/analytics-react-native`)"
   - RNCharts (from `../node_modules/react-native-charts-wrapper`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga/`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Analytics
     - boost-for-react-native
     - Charts
     - SwiftyJSON
@@ -98,22 +104,26 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
   React:
     :path: "../node_modules/react-native/"
+  RNAnalytics:
+    :path: "../node_modules/@segment/analytics-react-native"
   RNCharts:
     :path: "../node_modules/react-native-charts-wrapper"
   yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga/"
 
 SPEC CHECKSUMS:
+  Analytics: 63744ad4afa65c3bcdcdb7a94b62515bde5b3900
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
   DoubleConversion: bb338842f62ab1d708ceb63ec3d999f0f3d98ecd
   Folly: c89ac2d5c6ab169cd7397ef27485c44f35f742c7
   glog: e8acf0ebbf99759d3ff18c86c292a5898282dcde
   React: 1fe0eb13d90b625d94c3b117c274dcfd2e760e11
+  RNAnalytics: e48fd2e561459802621750097c7ead245ea09b6a
   RNCharts: 786d1ea7d4c42216b4895cdaa9b8865469833430
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
 
-PODFILE CHECKSUM: fb38ab3c57b7baf19bf423c98cedbabf734d0ab6
+PODFILE CHECKSUM: 7001ce6c80480f1f024f80b47d892f6c3a481319
 
 COCOAPODS: 1.5.3
