@@ -108,6 +108,16 @@ android {
             abiFilters "armeabi-v7a", "x86"
         }
     }
+    signingConfigs {
+        release {
+            if (project.hasProperty('SNSPOC_RELEASE_STORE_FILE')) {
+                storeFile file(SNSPOC_RELEASE_STORE_FILE)
+                storePassword SNSPOC_RELEASE_STORE_PASSWORD
+                keyAlias SNSPOC_RELEASE_KEY_ALIAS
+                keyPassword SNSPOC_RELEASE_KEY_PASSWORD
+            }
+        }
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -124,6 +134,20 @@ android {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.release
+        }
+    }
+    flavorDimensions "environment"
+    productFlavors {
+        dev {
+            // Assigns this product flavor to the "version" flavor dimension.
+            // This property is optional if you are using only one dimension.
+            dimension "environment"
+        }
+        qa {
+            dimension "environment"
+            applicationIdSuffix ".test"
+            versionNameSuffix "-test"
         }
     }
     // applicationVariants are e.g. debug, release
@@ -155,9 +179,10 @@ configurations.all {
 }
 
 dependencies {
+    compile project(':react-native-charts-wrapper')
     implementation project(':react-native-push-notification')
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation 'com.android.support:design:25.4.0'
+    implementation 'com.android.support:design:28.0.0'
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules
     implementation 'com.google.firebase:firebase-core:16.0.5'
