@@ -4,9 +4,11 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'snspoc' do
-    pod 'yoga', path: '../node_modules/react-native/ReactCommon/yoga/'
+
     pod 'React', path: '../node_modules/react-native/', :subspecs => [
     'Core',
+    'CxxBridge',
+    'DevSupport',
     'ART',
     'RCTActionSheet',
     'RCTAnimation',
@@ -17,10 +19,10 @@ target 'snspoc' do
     'RCTText',
     'RCTVibration',
     'RCTWebSocket',
-    'DevSupport',
-    'CxxBridge',
     ]
 
+    pod 'yoga', path: '../node_modules/react-native/ReactCommon/yoga/'
+    
     pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
     pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
     pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
@@ -34,6 +36,11 @@ swift4 = ['Charts']
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
+    targets_to_ignore = %w(React yoga)
+    
+    if targets_to_ignore.include? target.name
+      target.remove_from_project
+    end
     target.build_configurations.each do |config|
       if swift4.include?(target.name)
         config.build_settings['SWIFT_VERSION'] = '4.1'

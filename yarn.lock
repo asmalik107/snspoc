@@ -931,10 +931,10 @@
     xcode "^2.0.0"
     xmldoc "^0.4.0"
 
-"@segment/analytics-react-native@^0.0.1-beta.3":
-  version "0.0.1-beta.3"
-  resolved "https://registry.yarnpkg.com/@segment/analytics-react-native/-/analytics-react-native-0.0.1-beta.3.tgz#a4e68f84c85db76bd3431e648791250b0d715983"
-  integrity sha512-pvhEasUKiNNKtu5D7CG1HzGpJZwP1qt6mYqQX7PMNyBKiocl5oHPRiDGfoYgcdjcPG+OloXG4Rd/49z6NgGCYw==
+"@segment/analytics-react-native@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@segment/analytics-react-native/-/analytics-react-native-1.0.1.tgz#7e974ae3a4b28bd4a4d760d0ec752512912a8ce7"
+  integrity sha512-872ojMYhRZSBGHRngSpNkRCE5SkD+pD4cVB9QoLyGVssune4jeqVaPwuXji/J9wuQ/u871n7Qt1MqtD500Jv7A==
 
 "@types/babel__core@^7.1.0":
   version "7.1.0"
@@ -5178,10 +5178,10 @@ react-native-charts-wrapper@^0.5.0:
     prop-types "^15.5.10"
     react "16.1.1"
 
-react-native-navigation@^2.8.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-2.8.0.tgz#30b25a0744dda7c04d29bb5c8e8c3af911627d51"
-  integrity sha512-Q/Np5XsgB7CPfOuilC2+qLouLMc0WqqsfNW+S669oxYRzQ9gB5BgUxLnyYBg/Buhv2FZrWatv62VguFHWJ0BaA==
+react-native-navigation@^2.21.0:
+  version "2.21.0"
+  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-2.21.0.tgz#e35aa0934852d3423527da0452c2080566ff4666"
+  integrity sha512-6dmwx89OuQrjDXbc4RBT5iHkO50pWBdecFPozmMxWE+RrurjCtkKhEHBuYDPL9bEwrnmpnoAiIp/FaTqrq3p4Q==
   dependencies:
     hoist-non-react-statics "3.x.x"
     lodash "4.17.x"

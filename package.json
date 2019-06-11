@@ -11,11 +11,11 @@
     "test": "jest"
   },
   "dependencies": {
-    "@segment/analytics-react-native": "^0.0.1-beta.3",
+    "@segment/analytics-react-native": "^1.0.1",
     "react": "16.8.3",
     "react-native": "0.59.4",
     "react-native-charts-wrapper": "^0.5.0",
-    "react-native-navigation": "^2.8.0",
+    "react-native-navigation": "^2.21.0",
     "react-native-push-notification": "^3.1.2",
     "react-native-schemes-manager": "^1.0.5"
   },
